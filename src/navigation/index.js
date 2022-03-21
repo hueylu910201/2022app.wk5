@@ -15,10 +15,11 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 
+
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <MyTabs />
+      <MyTabs/>
     </NavigationContainer>
   );
 }
@@ -29,7 +30,7 @@ const MyTabs = () => {
       initialRouteName="HomeStack"
       screenOptions={{
         tabBarActiveTintColor: '#6200EE',
-        // headerShown: false
+        headerShown: false
       }}
     >
       <Tab.Screen 
@@ -92,6 +93,14 @@ const HomeStack = () => {
             shadowOffset:0,
           
           },
+          headerLeft: () => (
+            <MaterialCommunityIcons
+              name={'menu'}
+              size={24}
+              onPress={() => alert("Drawer")}
+              style={{ marginLeft: -3 }}
+            />
+          ),
           headerRight: () => (
             <MaterialCommunityIcons
               name={'magnify'}
@@ -106,8 +115,8 @@ const HomeStack = () => {
       <Stack.Screen
         name="Detail"
         component={DetailScreen}
-        options={({ route }) => ({
-          title: route.params.title,
+        options={({ navigation }) => ({
+          title:" ",
           headerStyle: {
             backgroundColor: '#fff',
           },
@@ -116,6 +125,14 @@ const HomeStack = () => {
             fontWeight: '400',
             fontSize: 20
           },
+          headerLeft: () => (
+            <MaterialCommunityIcons
+              name={'chevron-left'}
+              size={30}
+              onPress={() =>navigation.goBack()}
+              style={{ marginLeft: 4 }}
+            />
+          ),
         })}
       />
     </Stack.Navigator>

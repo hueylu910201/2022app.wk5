@@ -7,7 +7,7 @@ const AlbumScreen = ({ navigation }) => {
   return (
     <ScrollView flex={1}>
       <Box marginLeft={3}>
-        <Text fontSize={24} marginTop={5} marginBottom={5} fontWeight='bold'>Popular</Text>
+        <Text fontSize={24} marginTop={5} marginBottom={5} fontWeight='bold'>Popular Books</Text>
         <AlbumList 
           list={albumData.albumList}
           navigation={navigation}

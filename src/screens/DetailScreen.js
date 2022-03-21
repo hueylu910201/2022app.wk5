@@ -14,38 +14,32 @@ const DetailScreen = ({ route }) => {
   return (
     <Center>
       <ScrollView>
-        <AspectRatio w="200" h="300">
+        <Box w="200" h="300" mx="auto" mt={5} mb={3}>
           <Image
             w={200}
             h={300}
             source={{uri: image }}
             alt='albumImage'
           />
-        </AspectRatio>
-        <Box bg="#fff" padding="2" margin="2">
+        </Box>
+        <Box  padding="2" margin="2">
+            <Text fontSize={24} mx="auto" fontWeight='bold'>{title}</Text>
+            <Text fontSize={14} mx="auto" color='#666666'>{author}</Text>
+            <Text mx="auto" textAlign="center">{description}</Text>
+        </Box>
+        <Box padding="2" margin="2">
           <Center>
-            <Heading pt={1} fontSize="2xl" color='#6099E4'>Discount Now!</Heading>
-            <Heading fontSize="4xl">Price: ${price}</Heading>
           </Center>
           <Button 
             mt="4"
+            fontSize={14}
+            bg='#6200EE'
             onPress={() => Linking.openURL(url)}
           >
-            Buy Now !
+            Buy Now for $46.99
           </Button>   
         </Box>
-        <Box bg="#fff" padding="2" margin="2">
-            <Text>
-              <Text bold>Artist: </Text>
-              {author}
-            </Text>
-            <Text>            
-              <Text bold>Title: </Text>
-              {title}
-            </Text>
-            <Text mt='15' bold>Descriptions:</Text>
-            <Text>{'\t'}{description}</Text>
-        </Box>
+       
       </ScrollView>      
     </Center>
 
