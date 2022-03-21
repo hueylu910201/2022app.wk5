@@ -5,7 +5,7 @@ const SettingsScreen = () => {
     return (
     <Center bg="emerald.100" flex={1}>
         <Text fontSize={30}>
-            This is a Setting Page
+             My Books Page
         </Text>              
     </Center>
     );

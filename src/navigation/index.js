@@ -83,11 +83,24 @@ const HomeStack = () => {
         name="Home"
         component={AlbumScreen}
         options={{
-          title: albumData.albumTitle,
-          headerTitleStyle: {
-            fontWeight: '400',
-            fontSize: 20
+          title: "",
+          headerShadowVisible:false,
+          headerStyle:{
+            elevation: 0, // remove shadow on Android
+            shadowOpacity: 0, // remove shadow on iOS
+            backgroundColor:"#fff",
+            shadowOffset:0,
+          
           },
+          headerRight: () => (
+            <MaterialCommunityIcons
+              name={'magnify'}
+              size={24}
+              onPress={() => alert("Search")}
+              style={{ marginRight: 16 }}
+            />
+          ),
+          
         }}
       />
       <Stack.Screen
