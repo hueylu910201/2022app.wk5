@@ -1,9 +1,9 @@
 import React from "react";
-import { Box, HStack, VStack, AspectRatio, Text, Image, Pressable } from "native-base";
+import { Box, HStack, VStack, AspectRatio, Text, Image, Pressable ,ScrollView} from "native-base";
 //import { StyleSheet, Text, View, Image, Pressable, Linking} from "react-native";
 
 const AlbumDetail = ({ album, navigation }) => {
-  return (
+  return(
     <Box marginX={1} marginBottom={5} borderRadius={3}>
       <Box w={180}>
         <Pressable 
@@ -24,8 +24,7 @@ const AlbumDetail = ({ album, navigation }) => {
         <Text fontSize={12} opacity={0.5}>{album.author}</Text>
       </Box>   
     </Box>
- 
-)};
+) };
 
 
 export default AlbumDetail;
