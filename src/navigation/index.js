@@ -138,6 +138,7 @@ const HomeStack = () => {
             <MaterialCommunityIcons
               name={'bookmark-outline'}
               size={30}
+              onPress={() => alert("You have collected this!")}
             />
           ),
           

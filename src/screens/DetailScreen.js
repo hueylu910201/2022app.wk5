@@ -31,8 +31,9 @@ const DetailScreen = ({ route }) => {
                 h={5}
                 w={100}
                 source={{uri:stars}}
+                alt="stars"
               />
-              <Text fontSize={14} mx="auto" color='#666666' paddingLeft={5}>{scores}</Text>
+              <Text fontSize={14} mx="auto" color='#666666' paddingLeft={3}>{scores}</Text>
             </Box>
             <Text mx="auto" textAlign="center">{description}</Text>
         </Box>
