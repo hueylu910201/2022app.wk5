@@ -6,7 +6,7 @@ import albumData from "../json/albums.json";
 const AlbumScreen = ({ navigation }) => {
   return (
     <ScrollView flex={1}>
-      <Box marginLeft={3}>
+      <Box marginLeft={3} bg="white">
         <Text fontSize={24} marginTop={5} marginBottom={5} fontWeight='bold'>Popular Books</Text>
         <AlbumList 
           list={albumData.albumList}
@@ -14,7 +14,7 @@ const AlbumScreen = ({ navigation }) => {
         />
       </Box>
 
-      <Box marginLeft={3}>
+      <Box marginLeft={3} bg="white">
         <Text fontSize={24} fontWeight='bold'  marginTop={5} marginBottom={5} >Newest</Text>
         <AlbumList 
           list={albumData.albumList2}

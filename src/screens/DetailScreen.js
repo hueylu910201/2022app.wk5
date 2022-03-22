@@ -6,13 +6,14 @@ import { Center, ScrollView, Box, AspectRatio, Text, Heading, Image, Button } fr
 const DetailScreen = ({ route }) => {
   const { title, 
     author,
-    price,
     url,
     image,
+    stars,
+    scores,
     description
   } = route.params;
   return (
-    <Center>
+    <Center bg="white">
       <ScrollView>
         <Box w="200" h="300" mx="auto" mt={5} mb={3}>
           <Image
@@ -25,6 +26,14 @@ const DetailScreen = ({ route }) => {
         <Box  padding="2" margin="2">
             <Text fontSize={24} mx="auto" fontWeight='bold'>{title}</Text>
             <Text fontSize={14} mx="auto" color='#666666'>{author}</Text>
+            <Box mx='auto' flexDirection={'row'}>
+              <Image
+                h={5}
+                w={100}
+                source={{uri:stars}}
+              />
+              <Text fontSize={14} mx="auto" color='#666666' paddingLeft={5}>{scores}</Text>
+            </Box>
             <Text mx="auto" textAlign="center">{description}</Text>
         </Box>
         <Box padding="2" margin="2">

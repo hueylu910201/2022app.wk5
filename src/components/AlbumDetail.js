@@ -4,7 +4,7 @@ import { Box, HStack, VStack, AspectRatio, Text, Image, Pressable ,ScrollView} f
 
 const AlbumDetail = ({ album, navigation }) => {
   return(
-    <Box marginX={1} marginBottom={5} borderRadius={3}>
+    <Box marginX={1} marginBottom={5} borderRadius={3} >
       <Box w={180}>
         <Pressable 
           onPress={() => navigation.navigate('Detail', album)}
@@ -20,6 +20,11 @@ const AlbumDetail = ({ album, navigation }) => {
         </Pressable>
       </Box>
       <Box>
+        <Image
+          h={5}
+          w={100}
+          source={{uri:album.stars}}
+        />
         <Text fontSize={16} fontWeight='bold'>{album.title}</Text>
         <Text fontSize={12} opacity={0.5}>{album.author}</Text>
       </Box>   

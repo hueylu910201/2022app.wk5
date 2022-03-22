@@ -59,6 +59,7 @@ const MyTabs = () => {
         name="Settings" 
         component={SettingsScreen} 
         options={{
+          headerShown: false,
           title: "My books",
           headerTitleStyle: {
             fontWeight: '400',
@@ -133,6 +134,13 @@ const HomeStack = () => {
               style={{ marginLeft: 4 }}
             />
           ),
+          headerRight: () => (
+            <MaterialCommunityIcons
+              name={'bookmark-outline'}
+              size={30}
+            />
+          ),
+          
         })}
       />
     </Stack.Navigator>
