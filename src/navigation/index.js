@@ -1,8 +1,8 @@
-import React from 'react';
+import React ,{useState}from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import {TouchableOpacity,Text} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import AlbumScreen from '../screens/AlbumScreen';
@@ -75,6 +75,11 @@ const MyTabs = () => {
 }
 
 const HomeStack = () => {
+  const [toggle, setToggle] = useState(true);
+    const toggleFunction = () => {
+        setToggle(!toggle);
+    };
+
   return (
     <Stack.Navigator
       // screenOptions={{
@@ -135,12 +140,12 @@ const HomeStack = () => {
             />
           ),
           headerRight: () => (
-            <MaterialCommunityIcons
-              name={'bookmark-outline'}
-              size={30}
-              onPress={() => alert("You have collected this!")}
-            />
-          ),
+            <TouchableOpacity onPress={() => toggleFunction()}>
+                <Text>{toggle ? <MaterialCommunityIcons name={'bookmark-outline'} color={'black'} size={25} />:
+                                <MaterialCommunityIcons name={'bookmark'} color={'#6200EE'} size={25} />}
+                </Text>
+            </TouchableOpacity>
+        ),
           
         })}
       />
