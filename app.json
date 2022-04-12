@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "book",
+    "githubUrl": "https://github.com/hueylu910201/2022app.wk5.git"
   }
 }

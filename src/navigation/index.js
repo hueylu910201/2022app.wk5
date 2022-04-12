@@ -26,10 +26,13 @@ const Navigation = () => {
 
 const MyTabs = () => {
   return (
-    <Tab.Navigator
+    <Tab.Navigator backBehavior='history'
+    
       initialRouteName="HomeStack"
       screenOptions={{
+        animation: 'slide_from_right',
         tabBarActiveTintColor: '#6200EE',
+        activeBackgroundColor: '#d0b0ff',
         headerShown: false
       }}
     >
@@ -39,8 +42,8 @@ const MyTabs = () => {
         options={{
           headerShown: false,
           title: "Home",
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
+          tabBarIcon: ({ focused,color }) => (
+            <MaterialCommunityIcons name="home" focused={focused} color={color} size={26} />
           ),
         }}
       />
